@@ -8,7 +8,7 @@ public class bruteoflongestsubarray {
             for (int j = i;j < arr.length;j++){
                 sum += arr[j];
                 if (sum == sumk)
-                    longest = Math.max(longest,j - i + 1);
+                    longest = Math.max(longest,j - i + 1);// j-i+1 because it gives the lenght between the j and i pointer in the current position
             }
         }
         System.out.println(longest);
