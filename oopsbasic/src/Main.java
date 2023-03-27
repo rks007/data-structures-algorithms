@@ -1,9 +1,5 @@
 public class Main {
-    public static class Student{   // creating a class
-        String name;
-        int rno;
-        double percentage;
-    }
+
     public static void main(String[] args) {
         Student x = new Student();//declaring space according to the student class
         x.name = "abccce";
