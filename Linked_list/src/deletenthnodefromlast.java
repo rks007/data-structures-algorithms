@@ -46,7 +46,7 @@ public class deletenthnodefromlast {
         e.next = f;
 
         display(a);
-        a = deletenode(a,5);
+        a = deletenode(a,4);
         System.out.println();
         display(a);
 
