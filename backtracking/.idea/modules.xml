@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LL/LL.iml" filepath="$PROJECT_DIR$/LL/LL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Linked_list/Linked_list.iml" filepath="$PROJECT_DIR$/Linked_list/Linked_list.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sorting/Sorting.iml" filepath="$PROJECT_DIR$/Sorting/Sorting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Strings/Strings.iml" filepath="$PROJECT_DIR$/Strings/Strings.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backtracking/backtracking.iml" filepath="$PROJECT_DIR$/backtracking/backtracking.iml" />
+      <module fileurl="file://$PROJECT_DIR$/binary_search/binary_search.iml" filepath="$PROJECT_DIR$/binary_search/binary_search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hashmap/hashmap.iml" filepath="$PROJECT_DIR$/hashmap/hashmap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java+dsa.iml" filepath="$PROJECT_DIR$/java+dsa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/linear_search/linear_search.iml" filepath="$PROJECT_DIR$/linear_search/linear_search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oopsbasic/oopsbasic.iml" filepath="$PROJECT_DIR$/oopsbasic/oopsbasic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practice/practice.iml" filepath="$PROJECT_DIR$/practice/practice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/queue/queue.iml" filepath="$PROJECT_DIR$/queue/queue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recursion/recursion.iml" filepath="$PROJECT_DIR$/recursion/recursion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stacks/stacks.iml" filepath="$PROJECT_DIR$/stacks/stacks.iml" />
+    </modules>
+  </component>
+</project>
