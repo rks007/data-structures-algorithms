@@ -2,7 +2,7 @@ public class nQueens {
     public static void main(String[] args) {
         int n = 4;
         char[][] board = new char[n][n];
-        for (int i = 0;i < n;i++){
+        for (int i = 0;i < n;i++){ // initially filling the board with X
             for (int j = 0;j < n;j++){
                 board[i][j] = 'X';
             }
