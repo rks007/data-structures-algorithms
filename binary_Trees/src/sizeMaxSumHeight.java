@@ -58,7 +58,7 @@ public class sizeMaxSumHeight {
         postOrder(root.right);
         System.out.print(root.val+" ");
     }
-    public static void nthLevel(Node root,int n){ //printing nodes of nth level
+    public static void nthLevel(Node root,int n){ //printing nodes of nth level from left to right
         if (root == null) return;
         if (n == 1){
             System.out.print(root.val+" ");
@@ -66,6 +66,15 @@ public class sizeMaxSumHeight {
         }
         nthLevel(root.left,n-1);
         nthLevel(root.right,n-1);
+    }
+    public static void nthLevel2(Node root,int n){ //printing nodes of nth level from right to left
+        if (root == null) return;
+        if (n == 1){
+            System.out.print(root.val+" ");
+            return;
+        }
+        nthLevel2(root.right,n-1);
+        nthLevel2(root.left,n-1);
     }
     public static void main(String[] args) {
         Node root = new Node(1);
@@ -102,6 +111,11 @@ public class sizeMaxSumHeight {
         System.out.print("level order traversal without queue-> ");
         for (int i = 1; i <= levelofBinarytree;i++){
             nthLevel(root,i);
+        }
+        System.out.println("zigzag level order traversal");
+        for (int i = 1;i <= levelofBinarytree;i++){
+            if (i % 2 == 0) nthLevel2(root,i);
+            else nthLevel(root,i);
         }
     }
 }
