@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class constructTree {
+public class constructTreeFromLevelOrderTraversal {
     public static class Node{
         int val;
         Node left;
