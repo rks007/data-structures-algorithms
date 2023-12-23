@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class Anagram {
+public class Anagram { //leetcode 242
     public static boolean isAnagram(String s,String t){ //brute force approach
         if(s.length() != t.length()) return false;
         HashMap<Character,Integer> mp1 = makeFreqMap(s);
