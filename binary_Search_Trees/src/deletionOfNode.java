@@ -49,7 +49,7 @@ public class deletionOfNode {
 
         Node root = constructbfs(arr);
         preOrder(root);
-        delete(root,14);
+        delete(root,10);
         System.out.println();
         preOrder(root);
 
@@ -60,12 +60,24 @@ public class deletionOfNode {
         if (root == null) return;
         if(root.val > target){//go left
             if(root.left == null) return;
-            if(root.left.val == target) root.left = null;
+            if(root.left.val == target){
+                if(root.left.left == null && root.left.right == null) root.left = null;
+                else if (root.left.left == null || root.left.right == null){ //for one child
+                    if(root.left.left != null) root.left = root.left.left;
+                    else root.left = root.left.right;
+                }
+            }
             else delete(root.left,target);
         }
         else{ //go right
             if(root.right == null) return;
-            if(root.right.val == target) root.right = null;
+            if(root.right.val == target){
+                if(root.right.left == null && root.right.right == null) root.right = null;
+                else if (root.right.left == null || root.right.right == null ) { //for one child
+                    if (root.right.left != null) root.right = root.right.left;
+                    else root.right = root.right.right;
+                }
+            }
             else delete(root.right,target);
         }
     }
