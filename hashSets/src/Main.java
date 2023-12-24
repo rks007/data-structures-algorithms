@@ -18,7 +18,7 @@ public class Main {
         st.add("mike");
         System.out.println(st.contains("james"));
 
-        for ( String e : st ) {
+        for ( String e : st ) { //for traversing a set
             System.out.print(e+" ");
         }
 
