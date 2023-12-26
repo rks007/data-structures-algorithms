@@ -2,6 +2,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class maxHeap {
+    public static void delete_in_maxHeap(List<Integer> heap){
+        swap(heap,0,heap.size() - 1);
+        heap.remove(heap.size() - 1);
+        push_down_in_maxHeap(heap,0);
+    }
+
+    private static void push_down_in_maxHeap(List<Integer> heap, int index) {
+        int n = heap.size() - 1;
+        if(index == n){
+            return;
+        }
+        int left_index = (2 * index) + 1;
+        int right_index = (2 * index) + 2;
+        int largest = index;//consider your current index as the largest
+        if(left_index <=n && heap.get(left_index) > heap.get(largest)){
+            largest = left_index;
+        }
+        if(right_index <=n && heap.get(right_index) > heap.get(largest)){
+            largest = right_index;
+        }
+        if(largest == index){
+            return;
+        }
+
+        swap(heap,index,largest);
+        //recursive call
+        push_down_in_maxHeap(heap,largest);
+    }
+
     public static void insert_in_maxHeap(List<Integer> heap, int element){
         heap.add(element);
         int index = heap.size() - 1;
@@ -25,15 +54,16 @@ public class maxHeap {
 
     public static void main(String[] args) {
         List<Integer> heap = new ArrayList<>();
-        heap.add(60);
-        heap.add(50);
-        heap.add(40);
-        heap.add(30);
+        heap.add(90);
+        heap.add(80);
+        heap.add(70);
         heap.add(20);
-        heap.add(30);
         heap.add(10);
+        heap.add(50);
+        heap.add(60);
         System.out.println(heap);
-        insert_in_maxHeap(heap,40);
+        //insert_in_maxHeap(heap,40);
+        delete_in_maxHeap(heap);
         System.out.println(heap);
 
     }

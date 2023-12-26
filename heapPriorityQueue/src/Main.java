@@ -2,6 +2,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
+    public static void delete_from_minHeap(List<Integer> heap){
+        swap(heap,0,heap.size() -  1);
+        heap.remove(heap.size() - 1);// now delete the last positioned element
+        push_down_in_minHeap(heap,0); //now fix the first positioned element
+    }
+
+    private static void push_down_in_minHeap(List<Integer> heap, int index) {
+        int n = heap.size() - 1;
+        if(index == n){ //if you reach end then just return //base condition
+            return;
+        }
+        int left_index = (2 * index) + 1;
+        int right_index = (2 * index) + 2;
+        int smallest = index; //assume that index value is smallest
+
+        if(left_index <= n && heap.get(left_index) < heap.get(smallest)){//left_index <= n check is important because if left index is not present then it will give null pointer error so always chech for it
+            smallest = left_index;
+        }
+        if(right_index <= n && heap.get(right_index) < heap.get(smallest)){
+            smallest = right_index;
+        }
+        //2nd base condition
+        if(smallest == index){//above both comparision failed then returned beacuse tou are at correct positioned
+            return;
+        }
+        // now swap the values
+        swap(heap,index,smallest);
+        //recursive call
+        push_down_in_minHeap(heap,smallest);
+    }
+
     public static void insertMinHeap(List<Integer> heap, int element){
         heap.add(element);//add the value in the last
 
@@ -29,13 +60,16 @@ public class Main {
 
     public static void main(String[] args) {
         List<Integer> heap = new ArrayList<>();
-        heap.add(10);
+        heap.add(5);
         heap.add(20);
-        heap.add(30);
+        heap.add(10);
         heap.add(40);
         heap.add(50);
+        heap.add(30);
+        heap.add(60);
         System.out.println(heap);
-        insertMinHeap(heap,5);
+        //insertMinHeap(heap,5);
+        delete_from_minHeap(heap);
         System.out.println(heap);
 
     }
