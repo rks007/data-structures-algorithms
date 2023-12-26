@@ -5,11 +5,17 @@ public class Main {
     public static void delete_from_minHeap(List<Integer> heap){
         swap(heap,0,heap.size() -  1);
         heap.remove(heap.size() - 1);// now delete the last positioned element
-        push_down_in_minHeap(heap,0); //now fix the first positioned element
+        push_down_in_minHeap(heap,0, heap.size() - 1); //now fix the first positioned element
+    }
+    public static void heapify(List<Integer> arr){//build heap using better method i.e heapify  //o(n) for this
+        int first_non_leaf_node = ((arr.size() - 1) - 1) / 2; //last element ka parent node
+
+        for (int i = first_non_leaf_node;i >= 0;i--){
+            push_down_in_minHeap(arr,i, arr.size() - 1);
+        }
     }
 
-    private static void push_down_in_minHeap(List<Integer> heap, int index) {
-        int n = heap.size() - 1;
+    private static void push_down_in_minHeap(List<Integer> heap, int index,int n) {
         if(index == n){ //if you reach end then just return //base condition
             return;
         }
@@ -24,13 +30,13 @@ public class Main {
             smallest = right_index;
         }
         //2nd base condition
-        if(smallest == index){//above both comparision failed then returned beacuse tou are at correct positioned
+        if(smallest == index){//above both comparison failed then returned because tou are at correct positioned
             return;
         }
         // now swap the values
         swap(heap,index,smallest);
         //recursive call
-        push_down_in_minHeap(heap,smallest);
+        push_down_in_minHeap(heap, smallest, n);
     }
 
     public static void insertMinHeap(List<Integer> heap, int element){
@@ -60,16 +66,17 @@ public class Main {
 
     public static void main(String[] args) {
         List<Integer> heap = new ArrayList<>();
-        heap.add(5);
+        heap.add(90);
+        heap.add(80);
+        heap.add(70);
         heap.add(20);
         heap.add(10);
-        heap.add(40);
         heap.add(50);
-        heap.add(30);
         heap.add(60);
         System.out.println(heap);
         //insertMinHeap(heap,5);
-        delete_from_minHeap(heap);
+        //delete_from_minHeap(heap);
+        heapify(heap);
         System.out.println(heap);
 
     }

@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -5,11 +6,25 @@ public class maxHeap {
     public static void delete_in_maxHeap(List<Integer> heap){
         swap(heap,0,heap.size() - 1);
         heap.remove(heap.size() - 1);
-        push_down_in_maxHeap(heap,0);
+        push_down_in_maxHeap(heap,0,heap.size() - 1);
+    }
+    private static void heapify(List<Integer> arr){
+        int first_non_leafNode = ((arr.size() - 1) - 1) / 2;
+
+        for (int i = first_non_leafNode;i >= 0;i --) {
+            push_down_in_maxHeap(arr, i, arr.size() - 1);
+        }
+    }
+    private static void heapSort(List<Integer> arr){
+        heapify(arr); //first convert the array in max heap for ascending order and for descending convert it into min heap
+        int n = arr.size() - 1;
+        for (int i = n;i > 0;i--){
+            swap(arr,0,i);
+            push_down_in_maxHeap(arr,0,i - 1); //remember you will send size as i-1 because dont want to apply push down to last  element
+        }
     }
 
-    private static void push_down_in_maxHeap(List<Integer> heap, int index) {
-        int n = heap.size() - 1;
+    private static void push_down_in_maxHeap(List<Integer> heap, int index, int n) {
         if(index == n){
             return;
         }
@@ -28,7 +43,7 @@ public class maxHeap {
 
         swap(heap,index,largest);
         //recursive call
-        push_down_in_maxHeap(heap,largest);
+        push_down_in_maxHeap(heap,largest, n);
     }
 
     public static void insert_in_maxHeap(List<Integer> heap, int element){
@@ -63,7 +78,9 @@ public class maxHeap {
         heap.add(60);
         System.out.println(heap);
         //insert_in_maxHeap(heap,40);
-        delete_in_maxHeap(heap);
+        //delete_in_maxHeap(heap);
+        //heapify(heap);
+        heapSort(heap);
         System.out.println(heap);
 
     }
