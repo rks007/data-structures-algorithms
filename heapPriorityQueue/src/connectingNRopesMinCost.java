@@ -7,7 +7,7 @@ public class connectingNRopesMinCost { //gfg
         for (int i = 0;i < n;i++){ //add all elements in priority queue
             pq.add(arr[i]);
         }
-        while(pq.size() > 1){ //this while condition is imp
+        while(pq.size() > 1){ //this while condition is imp because when you dry run the code you will find in the there is one element left so if code run on one element the it will give null pointer error please put this condition
 
             long a = pq.peek();
             pq.remove();
