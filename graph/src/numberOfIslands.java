@@ -1,6 +1,6 @@
-public class numberOfIslands { //gfg
+public class numberOfIslands { //gfg and leetcode 200
     public int numIslands(char[][] grid) {
-        // Code here
+
         int n = grid.length;
         int m = grid[0].length;
 
