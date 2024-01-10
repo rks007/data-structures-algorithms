@@ -4,12 +4,11 @@ public class towerofhanoi {
     }
     static void towerhanoi(int n ,String src,String helper ,String dest){
         //base case
-        if (n == 1){
-            System.out.println("disk transfer "+n+" from "+src+" to "+dest);
+        if (n == 0){
             return;
         }
         towerhanoi(n-1,src,dest,helper);
-        System.out.println("disk transfer "+n+" from "+src+" to "+dest);
+        System.out.println(src+"->"+dest);//put the last disc
         towerhanoi(n-1,helper,src,dest);
     }
 }
