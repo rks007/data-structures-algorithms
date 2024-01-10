@@ -1,5 +1,5 @@
 public class Main {
-    static int calls = 0;
+    static int calls = 0; //just checking difference btw normal recursion and memoization
 
     private static int fibbo(int n,int[] dp){
         if (n == 1 || n == 0){
@@ -7,7 +7,7 @@ public class Main {
         }
 
 
-        if (dp[n] != -1){
+        if (dp[n] != -1){//check
             return dp[n];
         }
 
