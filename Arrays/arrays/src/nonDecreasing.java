@@ -9,7 +9,7 @@ public class nonDecreasing { //leetcode 665
         System.out.println(ans);
     }
     public static boolean isPossible(int[] arr, int n) {
-        int count = 0;
+        int count = 0;//maintain a counter
         for (int i = 0;i < n - 1;i++) {
             if (arr[i] > arr[i + 1]) {
                 count++;
