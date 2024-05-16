@@ -3,9 +3,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
-public class threeSum { //leetcode 15
+public class threeSumProblem { //leetcode 15
 
-    public static List<List<Integer>> threeSum(int[] nums){ //brute force  t.c = n^3
+    public static List<List<Integer>> threeSum1(int[] nums){ //brute force  t.c = n^3
         HashSet<List<Integer>> st = new HashSet<>();
         for (int i = 0;i < nums.length;i++){
             for (int j = i + 1;j < nums.length;j++){
