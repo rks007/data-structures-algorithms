@@ -16,7 +16,6 @@ public class bfs {
             //get all adjacent vertices of the removed node
             //mark adjacent visited, if not been visited earlier
             //then add it to the queue
-
             for(var e : adj.get(Node)){
                 if(vis[e] != true){
                     vis[e] = true;
