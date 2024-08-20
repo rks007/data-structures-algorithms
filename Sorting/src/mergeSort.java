@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class mergeSort {
-    static void mergesort(int[] arr,int l , int r){
+    static void mergesort(int[] arr,int l , int r){ //l is left and r is right
         //base case
         if (l >= r) return;
 
