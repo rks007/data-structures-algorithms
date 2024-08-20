@@ -1,5 +1,5 @@
 public class longestCommonSubsequenceTabulation {
-    private static int lcs(String s1, String s2, int i, int j,int[][] dp){
+    private static int lcs(String s1, String s2, int i, int j,int[][] dp){ //dry run
         if (i == 0 || j == 0){//base case for pointer going out of bound
             return 0;
         }
